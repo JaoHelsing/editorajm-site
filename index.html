@@ -58,6 +58,7 @@ a:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
   .grade>.livro:only-child .pe{justify-content:flex-start;gap:28px}
   .grade>.breve:only-child{grid-column:1/-1;min-height:220px}
 }
+.tema-financas .livro .tipo{color:var(--verde)}
 .breve{border:2px dashed #b9d2ee;border-radius:22px;padding:32px 24px;display:grid;justify-items:center;align-content:center;text-align:center;gap:12px;min-height:260px}
 .breve .selo{background:var(--verde-claro);color:var(--verde);font-weight:800;font-size:14px;border-radius:999px;padding:6px 14px}
 .breve b{font-family:Fredoka,system-ui,sans-serif;font-size:24px;line-height:1.15}
@@ -160,7 +161,22 @@ footer a{color:inherit}
         </div>
       </div>
       <div class="grade">
-        <!-- Quando o primeiro livro de finanças sair, troque este quadro "Em breve" pelo bloco <a class="livro">. -->
+        <!-- LANÇAMENTO DO LIVRO DE FINANÇAS: apague o quadro "Em breve" abaixo e tire o comentário do card pronto.
+             Troque o que está entre [colchetes]. Passo a passo completo em COMO-ADICIONAR-UM-LIVRO.md.
+        <a class="livro" href="/[endereco-do-livro]/">
+          <div class="foto"><img src="/[endereco-do-livro]/img/livro-3d.jpg" width="900" height="900" alt="Livro [título do livro]"></div>
+          <div class="info">
+            <span class="tipo">[Para quem é o livro]</span>
+            <h4>[Título do livro]</h4>
+            <p class="desc">[Uma ou duas frases sobre o que a pessoa ganha com o livro.]</p>
+            <p class="ficha">E-book em PDF · [N] páginas</p>
+            <div class="pe">
+              <span class="preco">R$ [00,00]<small>[preço de lançamento até 00/00]</small></span>
+              <span class="ver">Ver o livro</span>
+            </div>
+          </div>
+        </a>
+        -->
         <div class="breve">
           <span class="selo">Em breve</span>
           <b>O primeiro livro de finanças está a caminho</b>
