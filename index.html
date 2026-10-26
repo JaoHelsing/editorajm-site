@@ -3,10 +3,125 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Editora JM</title>
-<meta http-equiv="refresh" content="0; url=/historias-da-biblia/">
-<link rel="canonical" href="https://editorajm.com.br/historias-da-biblia/">
-<style>body{background:#0f2d5c;color:#f7f1e3;font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#ffc83d}</style>
+<title>Editora JM · Livros digitais para a família</title>
+<meta name="description" content="Livros digitais de João Moura, autor do canal Oração do Dia. Histórias da Bíblia para crianças e outros e-books para ler em família.">
+<meta property="og:title" content="Editora JM · Livros digitais para a família">
+<meta property="og:description" content="Histórias da Bíblia para crianças e outros e-books de João Moura.">
+<meta property="og:image" content="https://editorajm.com.br/historias-da-biblia/img/compartilhar.jpg">
+<link rel="canonical" href="https://editorajm.com.br/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2226%22%20fill%3D%22%23ffc83d%22/%3E%3Cg%20transform%3D%22rotate%28-10%2038%2070%29%22%3E%3Ctext%20x%3D%2238%22%20y%3D%2292%22%20font-family%3D%22Arial%20Rounded%20MT%20Bold%2CArial%2Csans-serif%22%20font-size%3D%2276%22%20font-weight%3D%22700%22%20fill%3D%22%230f2d5c%22%20text-anchor%3D%22middle%22%3EJ%3C/text%3E%3C/g%3E%3Cg%20transform%3D%22rotate%288%2082%2066%29%22%3E%3Ctext%20x%3D%2282%22%20y%3D%2290%22%20font-family%3D%22Arial%20Rounded%20MT%20Bold%2CArial%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22700%22%20fill%3D%22%23e2574c%22%20text-anchor%3D%22middle%22%3EM%3C/text%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--marinho:#0f2d5c;--marinho-2:#173b73;--azul:#1b5fb4;--ceu:#cfe3f7;--ceu-2:#e3eefa;--amarelo:#ffc83d;--amarelo-2:#ffd86e;--coral:#e2574c;--marfim:#f7f1e3;--borda:clamp(16px,4vw,64px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--marinho);color:var(--marfim);font-family:Manrope,system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{font-family:Fredoka,system-ui,sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+a:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
+.dentro{max-width:1200px;margin:0 auto}
+.barra{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px var(--borda);font-weight:700;font-size:16px}
+.barra a{color:var(--amarelo);text-decoration:none}
+.logo{display:inline-flex;align-items:center;gap:10px;font-family:Fredoka,system-ui,sans-serif;font-weight:700;font-size:22px}
+.logo-marca{width:63px;height:40px;flex:none}
+
+.topo{padding:clamp(40px,7vw,100px) var(--borda) clamp(56px,8vw,110px)}
+.topo h1{font-size:clamp(42px,6.4vw,84px);max-width:15ch}
+.topo h1 span{color:var(--amarelo)}
+.topo p{font-size:clamp(18px,1.6vw,21px);max-width:52ch;margin-top:22px}
+
+.vitrine{background:var(--ceu);color:var(--marinho);padding:clamp(64px,9vw,130px) var(--borda)}
+.vitrine .cab{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
+.vitrine h2{font-size:clamp(32px,4.4vw,54px)}
+.vitrine .cab p{font-size:17px;max-width:40ch}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr));gap:clamp(18px,2.4vw,32px)}
+
+.livro{background:var(--ceu-2);display:grid;grid-template-rows:auto 1fr;text-decoration:none;color:inherit;border-radius:22px;overflow:hidden;transition:transform .2s}
+.livro:hover{transform:translateY(-4px)}
+.livro:hover .ver{background:var(--amarelo-2)}
+.livro .foto{background:#d9e8f8;aspect-ratio:1;overflow:hidden}
+.livro .foto img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.livro:hover .foto img{transform:scale(1.04)}
+.livro .info{padding:24px 24px 26px;display:grid;gap:10px;align-content:start}
+.livro .tipo{font-size:15px;font-weight:800;color:var(--azul)}
+.livro h3{font-size:26px;line-height:1.12}
+.livro .desc{font-size:16px}
+.livro .ficha{font-size:15px;font-weight:700}
+.livro .pe{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:8px;flex-wrap:wrap}
+.livro .preco{font-weight:800;font-size:28px;letter-spacing:-.03em;line-height:1}
+.livro .preco small{display:block;font-size:13px;font-weight:700;letter-spacing:0;margin-top:4px}
+.ver{background:var(--amarelo);color:var(--marinho);font-weight:800;font-size:17px;border-radius:999px;padding:14px 24px;transition:background .15s}
+
+.autor{padding:clamp(64px,9vw,130px) var(--borda)}
+.autor .dentro{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,80px);align-items:start}
+.autor h2{font-size:clamp(30px,4vw,48px);max-width:18ch}
+.autor p{font-size:19px;margin-top:16px;max-width:56ch}
+.autor p:first-child{margin-top:0}
+
+footer{padding:56px var(--borda) 40px;background:#0a2149}
+footer .logo{font-size:clamp(40px,8vw,104px);letter-spacing:-.03em;line-height:1;color:var(--ceu);gap:clamp(10px,2vw,24px)}
+footer .logo .logo-marca{width:clamp(76px,13vw,180px);height:clamp(48px,8.2vw,114px)}
+footer .info{display:flex;flex-wrap:wrap;gap:10px 32px;margin-top:22px;font-size:15px}
+footer a{color:inherit}
+@media (prefers-reduced-motion:reduce){.livro,.livro .foto img,.ver{transition:none}.livro:hover,.livro:hover .foto img{transform:none}}
+@media (max-width:760px){.autor .dentro{grid-template-columns:1fr}.barra>span:not(.logo){display:none}}
+</style>
 </head>
-<body><p><a href="/historias-da-biblia/">Ir para os livros da Editora JM</a></p></body>
+<body>
+<header class="barra"><span class="logo"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg>Editora</span><span>Livros digitais para ler em família</span><a href="#livros">Ver os livros</a></header>
+
+<main>
+<section class="topo" aria-labelledby="t1">
+  <div class="dentro">
+    <h1 id="t1">Livros para ler <span>junto</span> com quem você ama</h1>
+    <p>E-books de João Moura, autor do canal Oração do Dia. Histórias da Bíblia contadas com palavras simples, para ler no celular ou imprimir em casa.</p>
+  </div>
+</section>
+
+<section class="vitrine" id="livros" aria-labelledby="t2">
+  <div class="dentro">
+    <div class="cab">
+      <h2 id="t2">Nossos livros</h2>
+      <p>Toque no livro para ver como ele é por dentro.</p>
+    </div>
+    <div class="grade">
+      <!-- Para um livro novo: copie este bloco <a class="livro"> e troque o link, a imagem e os textos. -->
+      <a class="livro" href="/historias-da-biblia/">
+        <div class="foto"><img src="/historias-da-biblia/img/livro-3d.jpg" width="900" height="900" alt="Livro As 7 histórias mais lindas da Bíblia para crianças"></div>
+        <div class="info">
+          <span class="tipo">Para crianças de 4 a 10 anos</span>
+          <h3>As 7 histórias mais lindas da Bíblia para crianças</h3>
+          <p class="desc">Uma história por noite, com oraçãozinha, versículo, perguntas para conversar e desenhos para colorir.</p>
+          <p class="ficha">E-book em PDF · 58 páginas coloridas</p>
+          <div class="pe">
+            <span class="preco">R$ 19,90<small>preço de lançamento até 30/11</small></span>
+            <span class="ver">Ver o livro</span>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="autor" aria-labelledby="t3">
+  <div class="dentro">
+    <h2 id="t3">Quem está por trás da Editora JM</h2>
+    <div>
+      <p>A Editora JM publica os livros digitais de João Moura, autor do canal Oração do Dia, no YouTube, onde conta histórias da Bíblia e faz orações para o dia a dia da família.</p>
+      <p>Os livros são vendidos e entregues pela Hotmart, com pagamento seguro e garantia de 7 dias.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <p class="logo"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg>Editora</p>
+  <div class="info">
+    <span>Livros de João Moura</span>
+    <a href="mailto:atendimento.editorajm@gmail.com">atendimento.editorajm@gmail.com</a>
+    <span>Pagamento e entrega pela Hotmart</span>
+  </div>
+</footer>
+</body>
 </html>
