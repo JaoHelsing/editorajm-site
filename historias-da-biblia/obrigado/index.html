@@ -19,8 +19,8 @@ h1{font-size:clamp(40px,5.4vw,68px);max-width:16ch}
 h2{font-size:clamp(28px,3.6vw,44px);max-width:22ch}
 p{max-width:60ch}
 .sec{padding:clamp(56px,8vw,120px) var(--borda)}
-.dentro{max-width:1100px;margin:0 auto}
-.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font-family:Fredoka,system-ui,sans-serif;font-weight:700;font-size:22px}.logo-marca{width:63px;height:40px;flex:none}.barra{padding:18px var(--borda);font-family:Fredoka,sans-serif;font-weight:700;font-size:22px}
+.dentro{max-width:1200px;margin:0 auto}
+.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font-family:Fredoka,system-ui,sans-serif;font-weight:700;font-size:22px}.logo-marca{width:63px;height:40px;flex:none}
 .topo{padding-top:clamp(24px,4vw,48px)}.topo .dentro{display:grid;grid-template-columns:1.3fr 1fr;gap:clamp(28px,5vw,72px);align-items:start}
 .topo .dentro>div{align-self:center;text-align:center}.topo h1,.topo p{margin-left:auto;margin-right:auto}.topo p{font-size:20px;margin-top:20px}
 .topo img{width:100%;max-width:300px;margin-left:auto}
@@ -39,7 +39,7 @@ p{max-width:60ch}
 .btn:hover{background:var(--amarelo-2);transform:translateY(-2px)}
 a:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
 .claro a:focus-visible{outline-color:var(--azul)}
-footer{padding:40px var(--borda);font-size:15px;background:#0a2149;display:flex;flex-wrap:wrap;gap:10px 32px}
+footer{padding:40px max(var(--borda),calc((100% - 1200px)/2));font-size:15px;background:#0a2149;display:flex;flex-wrap:wrap;gap:10px 32px}
 footer a{color:inherit}
 @media (prefers-reduced-motion:reduce){.btn{transition:none}}
 @media (max-width:760px){
@@ -48,9 +48,21 @@ footer a{color:inherit}
   .passos{grid-template-columns:1fr}
 }
 </style>
+<link rel="stylesheet" href="/comum/topo.css">
 </head>
 <body>
-<header class="barra"><span class="logo"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg>Editora</span></header>
+<header class="barra">
+  <a class="logo" href="/" aria-label="Editora JM, página inicial"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg><span class="logo-nome">Editora</span></a>
+  <nav class="menu" aria-label="Menu principal">
+    <div class="menu-item">
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-livros">Nossos livros <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 5 7 9.5 11.5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="menu-lista" id="menu-livros">
+        <a href="/#espiritualidade"><span class="menu-icone icone-fe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M6 8.5h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Espiritualidade e Religião</b><small>Histórias da Bíblia, oração e fé em família</small></span></a>
+        <a href="/#financas"><span class="menu-icone icone-financas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14.6 9.2c-.5-.9-1.5-1.4-2.6-1.4-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.6.4 2.7.9 2.7 2.2s-1.2 2.1-2.7 2.1c-1.2 0-2.2-.5-2.7-1.5M12 6.3v1.5m0 8.4v1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><b>Finanças</b><small>Dinheiro organizado na vida da família</small></span></a>
+      </div>
+    </div>
+  </nav>
+</header>
 <main>
 <section class="sec topo" aria-labelledby="t1">
   <div class="dentro">
@@ -99,5 +111,6 @@ footer a{color:inherit}
   <span>Editora JM · Livro de João Moura</span>
   <a href="mailto:atendimento.editorajm@gmail.com">atendimento.editorajm@gmail.com</a>
 </footer>
+<script src="/comum/topo.js" defer></script>
 </body>
 </html>

@@ -42,10 +42,6 @@ p{max-width:62ch}
 .miudo{font-size:15px;line-height:1.45}
 
 .logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font-family:Fredoka,system-ui,sans-serif;font-weight:700;font-size:22px}.logo-marca{width:63px;height:40px;flex:none}footer .logo{font-size:clamp(40px,8vw,104px);letter-spacing:-.03em;line-height:1;color:var(--ceu);gap:clamp(10px,2vw,24px)}footer .logo .logo-marca{width:clamp(76px,13vw,180px);height:clamp(48px,8.2vw,114px)}
-/* barra */
-.barra{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px var(--borda);font-weight:700;font-size:16px}
-.barra b{font-family:var(--f-titulo);font-size:22px}
-.barra a{text-decoration:none;color:var(--amarelo)}
 
 /* 1 topo */
 .topo{padding:clamp(24px,4vw,56px) var(--borda) clamp(64px,8vw,110px)}
@@ -150,7 +146,7 @@ details p{padding:0 22px 22px;font-size:17px}
 .final img{width:min(420px,80vw)}
 .final p{font-size:19px}
 
-footer{padding:56px var(--borda) 40px;background:#0a2149}
+footer{padding:56px max(var(--borda),calc((100% - 1200px)/2)) 40px;background:#0a2149}
 footer .nome{font-family:var(--f-titulo);font-weight:700;font-size:clamp(40px,8vw,104px);letter-spacing:-.03em;line-height:1;color:var(--ceu)}
 footer .info{display:flex;flex-wrap:wrap;gap:10px 32px;margin-top:22px;font-size:15px}
 
@@ -169,7 +165,6 @@ footer .info{display:flex;flex-wrap:wrap;gap:10px 32px;margin-top:22px;font-size
 }
 @media (max-width:720px){
   body{font-size:17px}
-  .barra>span:not(.logo){display:none}
   .topo .dentro,.espelho .dentro,.culpa .dentro,.depois .dentro,.quem .dentro,.autor .dentro,.oferta .dentro,.faq .dentro{grid-template-columns:1fr}
   .topo .capa{grid-row:auto;grid-column:auto;order:-1;width:62%;margin:0 auto}
   .falha .tres{grid-template-columns:1fr}
@@ -183,11 +178,24 @@ footer .info{display:flex;flex-wrap:wrap;gap:10px 32px;margin-top:22px;font-size
   .culpa img{max-width:340px}
 }
 </style>
+<link rel="stylesheet" href="/comum/topo.css">
 </head>
 <body>
 <script>document.documentElement.classList.add('js')</script>
 
-<header class="barra"><span class="logo"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg>Editora</span><span>Do autor do canal Oração do Dia</span><a href="#preco">R$ 19,90</a></header>
+<header class="barra">
+  <a class="logo" href="/" aria-label="Editora JM, página inicial"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg><span class="logo-nome">Editora</span></a>
+  <nav class="menu" aria-label="Menu principal">
+    <div class="menu-item">
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-livros">Nossos livros <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 5 7 9.5 11.5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="menu-lista" id="menu-livros">
+        <a href="/#espiritualidade"><span class="menu-icone icone-fe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M6 8.5h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Espiritualidade e Religião</b><small>Histórias da Bíblia, oração e fé em família</small></span></a>
+        <a href="/#financas"><span class="menu-icone icone-financas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14.6 9.2c-.5-.9-1.5-1.4-2.6-1.4-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.6.4 2.7.9 2.7 2.2s-1.2 2.1-2.7 2.1c-1.2 0-2.2-.5-2.7-1.5M12 6.3v1.5m0 8.4v1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><b>Finanças</b><small>Dinheiro organizado na vida da família</small></span></a>
+      </div>
+    </div>
+    <a class="menu-cta" href="#preco">R$ 19,90</a>
+  </nav>
+</header>
 
 <main>
 <!-- 1. Topo -->
@@ -438,5 +446,6 @@ document.querySelectorAll(".sobe").forEach((el, i) => {
   io ? io.observe(el) : el.classList.add("vis");
 });
 </script>
+<script src="/comum/topo.js" defer></script>
 </body>
 </html>
