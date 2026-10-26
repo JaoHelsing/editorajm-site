@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Editora JM · Livros digitais para a família</title>
-<meta name="description" content="Livros digitais de João Moura, autor do canal Oração do Dia. Histórias da Bíblia para crianças e outros e-books para ler em família.">
+<meta name="description" content="Livros digitais de João Moura, autor dos canais Oração do Dia e Dindin com Ciência. Orações, histórias da Bíblia para crianças e finanças da família.">
 <meta property="og:title" content="Editora JM · Livros digitais para a família">
 <meta property="og:description" content="Histórias da Bíblia para crianças e outros e-books de João Moura.">
 <meta property="og:image" content="https://editorajm.com.br/historias-da-biblia/img/compartilhar.jpg">
@@ -14,55 +14,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--marinho:#0f2d5c;--marinho-2:#173b73;--azul:#1b5fb4;--ceu:#cfe3f7;--ceu-2:#e3eefa;--amarelo:#ffc83d;--amarelo-2:#ffd86e;--coral:#e2574c;--verde:#1f7a50;--verde-claro:#d6f1e3;--marfim:#f7f1e3;--borda:clamp(16px,4vw,64px)}
+:root{--marinho:#0f2d5c;--marinho-2:#173b73;--azul:#1b5fb4;--ceu:#cfe3f7;--ceu-2:#e3eefa;--amarelo:#ffc83d;--amarelo-2:#ffd86e;--coral:#e2574c;--marfim:#f7f1e3;--borda:clamp(16px,4vw,64px)}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
 body{background:var(--marinho);color:var(--marfim);font-family:Manrope,system-ui,sans-serif;font-size:18px;line-height:1.55;-webkit-font-smoothing:antialiased}
 img{display:block;max-width:100%;height:auto}
 h1,h2,h3{font-family:Fredoka,system-ui,sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
 a:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
 .dentro{max-width:1200px;margin:0 auto}
+.barra{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px var(--borda);font-weight:700;font-size:16px}
+.barra a{color:var(--amarelo);text-decoration:none}
 .logo{display:inline-flex;align-items:center;gap:10px;font-family:Fredoka,system-ui,sans-serif;font-weight:700;font-size:22px}
 .logo-marca{width:63px;height:40px;flex:none}
 
-/* topo: texto centralizado em qualquer tela */
-.topo{padding:clamp(48px,8vw,120px) var(--borda) clamp(64px,9vw,130px);text-align:center}
-.topo .dentro{display:grid;justify-items:center;gap:clamp(18px,2vw,26px)}
-.topo h1{font-size:clamp(40px,6.4vw,84px);max-width:16ch}
+.topo{padding:clamp(40px,7vw,100px) var(--borda) clamp(56px,8vw,110px)}
+.topo h1{font-size:clamp(42px,6.4vw,84px);max-width:15ch}
 .topo h1 span{color:var(--amarelo)}
-.topo p{font-size:clamp(18px,1.6vw,21px);max-width:54ch}
-.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--amarelo);color:var(--marinho);font-weight:800;font-size:18px;text-decoration:none;border-radius:999px;padding:16px 32px;min-height:56px;margin-top:clamp(6px,1vw,14px);transition:background .15s,transform .15s}
-.btn:hover{background:var(--amarelo-2);transform:translateY(-2px)}
+.topo p{font-size:clamp(18px,1.6vw,21px);max-width:52ch;margin-top:22px}
 
-/* vitrine: um quadro por tema */
 .vitrine{background:var(--ceu);color:var(--marinho);padding:clamp(64px,9vw,130px) var(--borda)}
-.vitrine>.dentro{display:grid;gap:clamp(24px,3vw,40px)}
-.vitrine .cab{text-align:center;display:grid;justify-items:center;gap:12px}
+.vitrine .cab{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap;margin-bottom:40px}
 .vitrine h2{font-size:clamp(32px,4.4vw,54px)}
-.vitrine .cab p{font-size:17px;max-width:48ch}
-.tema{background:#fff;border-radius:28px;padding:clamp(20px,3.4vw,44px);scroll-margin-top:24px}
-.tema-cab{display:flex;align-items:center;gap:clamp(14px,2vw,20px);padding-bottom:clamp(18px,2.4vw,28px);margin-bottom:clamp(20px,2.6vw,32px);border-bottom:2px solid var(--ceu-2)}
-.tema-icone{width:clamp(48px,5vw,60px);height:clamp(48px,5vw,60px);border-radius:16px;display:grid;place-items:center;flex:none}
-.tema-icone svg{width:50%;height:50%}
-.tema-fe .tema-icone{background:#fff1c9;color:#b07a00}
-.tema-financas .tema-icone{background:var(--verde-claro);color:var(--verde)}
-.tema h3{font-size:clamp(24px,2.8vw,34px);line-height:1.1}
-.tema-cab p{font-size:16px;margin-top:4px;color:#3d5577}
-.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:clamp(16px,2vw,28px)}
-/* tema com um livro só: o card ocupa a linha toda, foto ao lado do texto */
-@media (min-width:761px){
-  .grade>.livro:only-child{grid-column:1/-1;grid-template-rows:none;grid-template-columns:minmax(260px,380px) 1fr}
-  .grade>.livro:only-child .info{align-content:center;padding:clamp(24px,3.4vw,48px);gap:14px}
-  .grade>.livro:only-child h4{font-size:clamp(26px,2.6vw,34px)}
-  .grade>.livro:only-child .desc{font-size:18px;max-width:46ch}
-  .grade>.livro:only-child .pe{justify-content:flex-start;gap:28px}
-  .grade>.breve:only-child{grid-column:1/-1;min-height:220px}
-}
-.tema-financas .livro .tipo{color:var(--verde)}
-.breve{border:2px dashed #b9d2ee;border-radius:22px;padding:32px 24px;display:grid;justify-items:center;align-content:center;text-align:center;gap:12px;min-height:260px}
-.breve .selo{background:var(--verde-claro);color:var(--verde);font-weight:800;font-size:14px;border-radius:999px;padding:6px 14px}
-.breve b{font-family:Fredoka,system-ui,sans-serif;font-size:24px;line-height:1.15}
-.breve p{font-size:16px;max-width:30ch;color:#3d5577}
+.vitrine .cab p{font-size:17px;max-width:40ch}
+.grade{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,440px),1fr));gap:clamp(18px,2.4vw,32px)}
 
 .livro{background:var(--ceu-2);display:grid;grid-template-rows:auto 1fr;text-decoration:none;color:inherit;border-radius:22px;overflow:hidden;transition:transform .2s}
 .livro:hover{transform:translateY(-4px)}
@@ -72,7 +45,7 @@ a:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
 .livro:hover .foto img{transform:scale(1.04)}
 .livro .info{padding:24px 24px 26px;display:grid;gap:10px;align-content:start}
 .livro .tipo{font-size:15px;font-weight:800;color:var(--azul)}
-.livro h4{font-family:Fredoka,system-ui,sans-serif;font-weight:700;letter-spacing:-.02em;font-size:24px;line-height:1.12;text-wrap:balance}
+.livro h3{font-size:26px;line-height:1.12}
 .livro .desc{font-size:16px}
 .livro .ficha{font-size:15px;font-weight:700}
 .livro .pe{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-top:8px;flex-wrap:wrap}
@@ -86,36 +59,27 @@ a:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
 .autor p{font-size:19px;margin-top:16px;max-width:56ch}
 .autor p:first-child{margin-top:0}
 
-footer{padding:56px max(var(--borda),calc((100% - 1200px)/2)) 40px;background:#0a2149}
-footer .logo{font-size:clamp(40px,8vw,104px);letter-spacing:-.03em;line-height:1;color:var(--ceu);gap:clamp(10px,2vw,24px)}
-footer .logo .logo-marca{width:clamp(76px,13vw,180px);height:clamp(48px,8.2vw,114px)}
-footer .info{display:flex;flex-wrap:wrap;gap:10px 32px;margin-top:22px;font-size:15px}
+@media (prefers-reduced-motion:reduce){.livro,.livro .foto img,.ver{transition:none}.livro:hover,.livro:hover .foto img{transform:none}}
+@media (max-width:760px){.autor .dentro{grid-template-columns:1fr}.barra>span:not(.logo){display:none}}
+/* rodapé padrão (gerado por rodape.py) */
+footer{padding:56px var(--borda) 40px;background:#0a2149;color:var(--marfim);text-align:center}
 footer a{color:inherit}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.livro,.livro .foto img,.ver,.btn{transition:none}.livro:hover,.livro:hover .foto img,.btn:hover{transform:none}}
-@media (max-width:760px){footer{text-align:center}footer .info{flex-direction:column;align-items:center}.autor .dentro{grid-template-columns:1fr}.tema{border-radius:22px}.tema-cab{align-items:flex-start}}
+footer .logo{display:flex;justify-content:center;align-items:center;gap:clamp(10px,2vw,24px);text-decoration:none;font-family:Fredoka,system-ui,sans-serif;font-weight:700;font-size:clamp(40px,8vw,104px);letter-spacing:-.03em;line-height:1;color:var(--ceu)}
+footer .logo .logo-marca{width:clamp(76px,13vw,180px);height:clamp(48px,8.2vw,114px);flex:none}
+footer .info,footer .legal{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 32px;margin-top:22px;font-size:15px}
+footer .legal{margin-top:16px;font-size:14px;opacity:.85}
+@media (max-width:760px){footer .info,footer .legal{flex-direction:column;align-items:center}}
+/* fim do rodapé padrão */
 </style>
-<link rel="stylesheet" href="/comum/topo.css">
 </head>
 <body>
-<header class="barra">
-  <a class="logo" href="/" aria-label="Editora JM, página inicial"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg><span class="logo-nome">Editora</span></a>
-  <nav class="menu" aria-label="Menu principal">
-    <div class="menu-item">
-      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-livros">Nossos livros <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 5 7 9.5 11.5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
-      <div class="menu-lista" id="menu-livros">
-        <a href="/#espiritualidade"><span class="menu-icone icone-fe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M6 8.5h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Espiritualidade e Religião</b><small>Histórias da Bíblia, oração e fé em família</small></span></a>
-        <a href="/#financas"><span class="menu-icone icone-financas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14.6 9.2c-.5-.9-1.5-1.4-2.6-1.4-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.6.4 2.7.9 2.7 2.2s-1.2 2.1-2.7 2.1c-1.2 0-2.2-.5-2.7-1.5M12 6.3v1.5m0 8.4v1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><b>Finanças</b><small>Dinheiro organizado na vida da família</small></span></a>
-      </div>
-    </div>
-  </nav>
-</header>
+<header class="barra"><span class="logo"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg>Editora</span><span>Livros digitais para ler em família</span><a href="#livros">Ver os livros</a></header>
 
 <main>
 <section class="topo" aria-labelledby="t1">
   <div class="dentro">
     <h1 id="t1">Livros para ler <span>junto</span> com quem você ama</h1>
-    <p>E-books de João Moura, autor do canal Oração do Dia. Histórias da Bíblia contadas com palavras simples, para ler no celular ou imprimir em casa.</p>
-    <a class="btn" href="#livros">Ver os livros</a>
+    <p>E-books de João Moura, autor dos canais Oração do Dia e Dindin com Ciência. Orações, histórias da Bíblia e o dinheiro da casa, em palavras simples, para ler no celular ou imprimir em casa.</p>
   </div>
 </section>
 
@@ -123,67 +87,63 @@ footer a{color:inherit}
   <div class="dentro">
     <div class="cab">
       <h2 id="t2">Nossos livros</h2>
-      <p>Escolha um tema e toque no livro para ver como ele é por dentro.</p>
+      <p>Toque no livro para ver como ele é por dentro.</p>
     </div>
-
-    <section class="tema tema-fe" id="espiritualidade" aria-labelledby="t-fe">
-      <div class="tema-cab">
-        <span class="tema-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M6 8.5h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span>
-        <div>
-          <h3 id="t-fe">Espiritualidade e Religião</h3>
-          <p>Histórias da Bíblia, oração e fé para viver em família.</p>
-        </div>
-      </div>
-      <div class="grade">
-        <!-- Para um livro novo deste tema: copie este bloco <a class="livro"> e troque o link, a imagem e os textos. -->
-        <a class="livro" href="/historias-da-biblia/">
-          <div class="foto"><img src="/historias-da-biblia/img/livro-3d.jpg" width="900" height="900" alt="Livro As 7 histórias mais lindas da Bíblia para crianças"></div>
-          <div class="info">
-            <span class="tipo">Para crianças de 4 a 10 anos</span>
-            <h4>As 7 histórias mais lindas da Bíblia para crianças</h4>
-            <p class="desc">Uma história por noite, com oraçãozinha, versículo, perguntas para conversar e desenhos para colorir.</p>
-            <p class="ficha">E-book em PDF · 58 páginas coloridas</p>
-            <div class="pe">
-              <span class="preco">R$ 19,90<small>preço de lançamento até 30/11</small></span>
-              <span class="ver">Ver o livro</span>
-            </div>
+    <div class="grade">
+      <!-- Para um livro novo: copie este bloco <a class="livro"> e troque o link, a imagem e os textos. -->
+      <a class="livro" href="/historias-da-biblia/">
+        <div class="foto"><img src="/historias-da-biblia/img/livro-3d.jpg" width="900" height="900" alt="Livro As 7 histórias mais lindas da Bíblia para crianças"></div>
+        <div class="info">
+          <span class="tipo">Para crianças de 4 a 10 anos</span>
+          <h3>As 7 histórias mais lindas da Bíblia para crianças</h3>
+          <p class="desc">Uma história por noite, com oraçãozinha, versículo, perguntas para conversar e desenhos para colorir.</p>
+          <p class="ficha">E-book em PDF · 58 páginas coloridas</p>
+          <div class="pe">
+            <span class="preco">R$ 19,90<small>preço de lançamento até 30/11</small></span>
+            <span class="ver">Ver o livro</span>
           </div>
-        </a>
-      </div>
-    </section>
-
-    <section class="tema tema-financas" id="financas" aria-labelledby="t-fin">
-      <div class="tema-cab">
-        <span class="tema-icone"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14.6 9.2c-.5-.9-1.5-1.4-2.6-1.4-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.6.4 2.7.9 2.7 2.2s-1.2 2.1-2.7 2.1c-1.200 0-2.2-.5-2.7-1.5M12 6.3v1.5m0 8.4v1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
-        <div>
-          <h3 id="t-fin">Finanças</h3>
-          <p>Dinheiro organizado, sem complicação, na vida da família.</p>
         </div>
-      </div>
-      <div class="grade">
-        <!-- LANÇAMENTO DO LIVRO DE FINANÇAS: apague o quadro "Em breve" abaixo e tire o comentário do card pronto.
-             Troque o que está entre [colchetes]. Passo a passo completo em COMO-ADICIONAR-UM-LIVRO.md.
-        <a class="livro" href="/[endereco-do-livro]/">
-          <div class="foto"><img src="/[endereco-do-livro]/img/livro-3d.jpg" width="900" height="900" alt="Livro [título do livro]"></div>
-          <div class="info">
-            <span class="tipo">[Para quem é o livro]</span>
-            <h4>[Título do livro]</h4>
-            <p class="desc">[Uma ou duas frases sobre o que a pessoa ganha com o livro.]</p>
-            <p class="ficha">E-book em PDF · [N] páginas</p>
-            <div class="pe">
-              <span class="preco">R$ [00,00]<small>[preço de lançamento até 00/00]</small></span>
-              <span class="ver">Ver o livro</span>
-            </div>
+      </a>
+      <a class="livro" href="/oracoes-pela-familia/">
+        <div class="foto"><img src="/oracoes-pela-familia/img/livro-3d.jpg" width="900" height="900" alt="Livro Orações para entregar sua família nas mãos de Deus" loading="lazy"></div>
+        <div class="info">
+          <span class="tipo">Para quem ora pela família</span>
+          <h3>Orações para entregar sua família nas mãos de Deus</h3>
+          <p class="desc">14 orações pelos filhos, pelo casamento, pela saúde e pela casa, cada uma com versículo, e um diário de oração.</p>
+          <p class="ficha">E-book em PDF · 33 páginas</p>
+          <div class="pe">
+            <span class="preco">R$ 14,90</span>
+            <span class="ver">Ver o livro</span>
           </div>
-        </a>
-        -->
-        <div class="breve">
-          <span class="selo">Em breve</span>
-          <b>O primeiro livro de finanças está a caminho</b>
-          <p>Escreva para o e-mail do rodapé se quiser saber quando ele sair.</p>
         </div>
-      </div>
-    </section>
+      </a>
+      <a class="livro" href="/sair-das-dividas/">
+        <div class="foto"><img src="/sair-das-dividas/img/livro-3d.jpg" width="900" height="900" alt="Livro Como sair das dívidas ganhando pouco" loading="lazy"></div>
+        <div class="info">
+          <span class="tipo">Finanças da família</span>
+          <h3>Como sair das dívidas ganhando pouco</h3>
+          <p class="desc">Um plano em 5 degraus para o cartão, o cheque especial e as contas atrasadas, com folhas de trabalho para imprimir.</p>
+          <p class="ficha">E-book em PDF · 31 páginas</p>
+          <div class="pe">
+            <span class="preco">R$ 14,90<small>preço de lançamento até 30/11</small></span>
+            <span class="ver">Ver o livro</span>
+          </div>
+        </div>
+      </a>
+      <a class="livro" href="/planilha-controle-financeiro/">
+        <div class="foto"><img src="/planilha-controle-financeiro/img/capa.jpg" width="600" height="600" alt="Planilha de Controle Financeiro aberta num notebook" loading="lazy"></div>
+        <div class="info">
+          <span class="tipo">Finanças da família</span>
+          <h3>Planilha de Controle Financeiro</h3>
+          <p class="desc">Você anota o que entrou e o que saiu, e a planilha monta os gráficos, o orçamento, os cartões e as dívidas.</p>
+          <p class="ficha">Planilha de Excel para computador</p>
+          <div class="pe">
+            <span class="preco">R$ 14,90</span>
+            <span class="ver">Ver a planilha</span>
+          </div>
+        </div>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -191,7 +151,7 @@ footer a{color:inherit}
   <div class="dentro">
     <h2 id="t3">Quem está por trás da Editora JM</h2>
     <div>
-      <p>A Editora JM publica os livros digitais de João Moura, autor do canal Oração do Dia, no YouTube, onde conta histórias da Bíblia e faz orações para o dia a dia da família.</p>
+      <p>A Editora JM publica os livros digitais de João Moura, autor de dois canais no YouTube: o Oração do Dia, com orações e histórias da Bíblia para o dia a dia da família, e o Dindin com Ciência, que explica finanças pessoais do zero.</p>
       <p>Os livros são vendidos e entregues pela Hotmart, com pagamento seguro e garantia de 7 dias.</p>
     </div>
   </div>
@@ -199,13 +159,13 @@ footer a{color:inherit}
 </main>
 
 <footer>
-  <p class="logo"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg>Editora</p>
+  <a class="logo" href="/"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg>Editora</a>
   <div class="info">
     <span>Livros de João Moura</span>
     <a href="mailto:atendimento.editorajm@gmail.com">atendimento.editorajm@gmail.com</a>
     <span>Pagamento e entrega pela Hotmart</span>
   </div>
+  <nav class="legal" aria-label="Informações legais"><a href="/termos/">Termos de uso</a><a href="/privacidade/">Política de privacidade</a><a href="/reembolso/">Garantia e reembolso</a></nav>
 </footer>
-<script src="/comum/topo.js" defer></script>
 </body>
 </html>
