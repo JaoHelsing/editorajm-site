@@ -102,8 +102,8 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
       <h1 id="t1">7 noites de oração com o seu filho</h1>
       <p class="sub">Um ritual de 5 minutos para a hora de dormir, pronto para ler no celular: a oração para a criança repetir, uma conversa curta, uma frase para guardar e uma palavra só para você.</p>
 
-      <!-- Formulário "7 noites" da Brevo: troque BREVO_FORM_URL pelo endereço do formulário (sibforms.com/serve/...). -->
-      <form class="form" id="form" method="POST" action="BREVO_FORM_URL" data-form>
+      <!-- Formulário "7 noites de oração" da Brevo (lista 7 noites de oração; depois do envio, a Brevo leva para /confira/). -->
+      <form class="form" id="form" method="POST" action="https://31a69f8d.sibforms.com/serve/MUIFAIOP3zj-lNns-HKXgJqIHahKLhrNKW4EbbPr07ixB0APK5oIm6JzfiBokKOwkkzRey1BQ4CvZrystoWvdmB_oQv1erQfoI1TinnIoVpuGw4KgJkwKBGghivvgDUPvu1Iq3hHPMLpqigEICPZPCDyQ52kXS6PfHt5nb4Vohg-IhAfsjI6I9lbzt7Tk7rcNCaedskwajfaLRhMPQ==" data-form>
         <label class="campo" for="email">Seu melhor e-mail</label>
         <input type="email" id="email" name="EMAIL" autocomplete="email" inputmode="email" placeholder="voce@email.com" required>
         <label class="aceite"><input type="checkbox" required><span>Quero receber o e-book 7 noites de oração e e-mails do Oração do Dia com orações e ofertas dos livros da Editora JM. Posso sair quando quiser. Veja a <a href="/privacidade/">Política de privacidade</a>.</span></label>
@@ -151,18 +151,6 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
   </div>
   <nav class="legal" aria-label="Informações legais"><a href="/termos/">Termos de uso</a><a href="/privacidade/">Política de privacidade</a><a href="/reembolso/">Garantia e reembolso</a></nav>
 </footer>
-<script>
-// Enquanto o formulário da Brevo não estiver ligado, avisa em vez de mandar para um endereço vazio.
-const form = document.querySelector("[data-form]");
-form.addEventListener("submit", e => {
-  if (form.getAttribute("action").startsWith("BREVO")) {
-    e.preventDefault();
-    const erro = form.querySelector("[data-erro]");
-    erro.textContent = "O cadastro ainda não está ligado. Tente de novo mais tarde.";
-    erro.hidden = false;
-  }
-});
-</script>
 <script src="/comum/topo.js" defer></script>
 </body>
 </html>
