@@ -134,6 +134,43 @@ p{max-width:62ch}
 .selo{width:76px;height:76px;border-radius:50%;background:var(--marinho);color:var(--amarelo);display:grid;place-items:center;text-align:center;font-family:var(--f-titulo);font-weight:700;line-height:1;font-size:15px}
 .selo b{font-size:30px;display:block}
 
+/* super bônus */
+.superbonus{background:var(--amarelo);color:var(--marinho);position:relative;overflow:hidden}
+.superbonus .dentro{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
+.sb-selo{display:inline-block;background:var(--marinho);color:var(--amarelo);font-weight:800;font-size:15px;letter-spacing:.12em;text-transform:uppercase;padding:8px 16px;border-radius:999px}
+.sb-titulo{font-family:var(--f-titulo);font-weight:700;font-size:clamp(56px,9vw,120px);line-height:.9;letter-spacing:-.03em;margin:18px 0 10px;max-width:none;animation:sb-pulso 1.6s ease-in-out infinite;transform-origin:left center}
+@keyframes sb-pulso{50%{transform:scale(1.04)}}
+@media (prefers-reduced-motion:reduce){.sb-titulo{animation:none}}
+.sb-chamada{font-size:clamp(20px,2.2vw,26px);font-weight:800;line-height:1.3}
+.sb-chamada mark{background:var(--marinho);color:var(--amarelo);padding:0 .25em}
+.sb-nome{font-family:var(--f-titulo);font-size:clamp(26px,3vw,36px);line-height:1.1;margin:18px 0 10px;max-width:22ch}
+.sb-texto{font-size:18px}
+.sb-texto+ul{list-style:none;display:grid;gap:6px;margin:14px 0 0;font-weight:700}
+.sb-texto+ul li::before{content:"✓";margin-right:10px}
+.sb-relogio{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0 8px;max-width:460px}
+.sb-relogio div{background:var(--marinho);color:var(--amarelo);border-radius:14px;padding:12px 6px;text-align:center}
+.sb-relogio b{display:block;font-size:clamp(30px,4vw,44px);line-height:1;font-variant-numeric:tabular-nums}
+.sb-relogio small{font-size:13px;font-weight:700;color:var(--marfim);text-transform:uppercase;letter-spacing:.06em}
+.sb-aviso{font-size:15px;font-weight:700}
+.superbonus .btn{background:var(--marinho);color:var(--amarelo);margin-top:20px;width:100%;max-width:460px}
+.superbonus .btn:hover{background:var(--marinho-2)}
+.superbonus .btn:focus-visible{outline-color:var(--marinho)}
+.sb-paginas{position:relative;height:clamp(360px,42vw,520px)}
+.sb-paginas img{position:absolute;width:62%;box-shadow:0 18px 40px rgba(0,0,0,.28);border-radius:4px;background:#fff}
+.sb-paginas img:nth-child(1){left:0;top:8%;transform:rotate(-7deg)}
+.sb-paginas img:nth-child(2){right:0;top:4%;transform:rotate(6deg)}
+.sb-paginas img:nth-child(3){left:19%;top:0;z-index:2}
+.sb-paginas .sb-carimbo{position:absolute;z-index:3;right:2%;bottom:4%;width:118px;height:118px;border-radius:50%;background:var(--marinho);color:var(--amarelo);display:grid;place-items:center;text-align:center;font-weight:800;font-size:14px;line-height:1.1;transform:rotate(-10deg);box-shadow:0 10px 24px rgba(0,0,0,.25)}
+.sb-carimbo b{display:block;font-family:var(--f-titulo);font-size:30px}
+@media (max-width:860px){
+  .superbonus .dentro{grid-template-columns:1fr}
+  .sb-paginas{order:-1;height:clamp(300px,88vw,460px);max-width:460px;width:100%;margin:0 auto}
+  .sb-titulo{transform-origin:center}
+  .superbonus .texto{text-align:center;justify-items:center;display:grid}
+  .sb-relogio{width:100%}
+  .sb-texto+ul{justify-items:center}
+}
+
 /* 13 perguntas */
 .faq .dentro{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(32px,5vw,80px)}
 details{background:var(--ceu);margin-bottom:10px}
@@ -230,7 +267,7 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
         <li>O nascimento de Jesus<span>Lucas 2</span></li>
         <li>Jesus acalma a tempestade<span>Marcos 4</span></li>
       </ul>
-      <p class="relogio" data-relogio hidden>O preço de lançamento acaba em <b data-falta></b>.</p>
+      <p class="relogio" data-relogio hidden>O preço de lançamento e o <a href="#bonus">SUPER BÔNUS</a> acabam em <b data-falta></b>.</p>
     </div>
   </div>
 </section>
@@ -364,6 +401,34 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
   </div>
 </section>
 
+<!-- Super bônus (some sozinho depois de 30/11) -->
+<section class="sec superbonus" id="bonus" aria-labelledby="tsb" data-superbonus>
+  <div class="dentro">
+    <div class="texto">
+      <span class="sb-selo">Presente por tempo limitado</span>
+      <h2 class="sb-titulo" id="tsb">SUPER BÔNUS</h2>
+      <p class="sb-chamada">Comprando <mark>até 30 de novembro</mark>, você leva também, sem pagar nada a mais:</p>
+      <h3 class="sb-nome">Os 7 desenhos para colorir em folha A4</h3>
+      <p class="sb-texto">Um PDF separado, com um desenho de cada história no tamanho certo para imprimir. Depois da leitura, a criança colore a história que acabou de ouvir, e você imprime de novo quantas vezes quiser.</p>
+      <ul><li>7 desenhos, um de cada história</li><li>Folha A4, pronta para imprimir em casa</li><li>Imprime quantas vezes quiser</li></ul>
+      <div class="sb-relogio" role="timer" aria-label="Tempo até o fim do bônus">
+        <div><b data-sb="d">--</b><small>dias</small></div>
+        <div><b data-sb="h">--</b><small>horas</small></div>
+        <div><b data-sb="m">--</b><small>min</small></div>
+        <div><b data-sb="s">--</b><small>seg</small></div>
+      </div>
+      <p class="sb-aviso">Quando o relógio zerar, o bônus sai da oferta e o livro passa para R$ 27,90.</p>
+      <a class="btn" href="#preco" data-checkout>Quero o livro com o SUPER BÔNUS</a>
+    </div>
+    <div class="sb-paginas" aria-hidden="false">
+      <img src="img/bonus/pagina-02.jpg" width="620" height="877" alt="Desenho para colorir do bônus" loading="lazy">
+      <img src="img/bonus/pagina-04.jpg" width="620" height="877" alt="Desenho para colorir do bônus" loading="lazy">
+      <img src="img/bonus/pagina-01.jpg" width="620" height="877" alt="Desenho para colorir do bônus" loading="lazy">
+      <span class="sb-carimbo"><span><b>GRÁTIS</b>até 30/11</span></span>
+    </div>
+  </div>
+</section>
+
 <!-- 10 e 11. Oferta (a prova é o livro por dentro; avaliações reais entram aqui quando vierem) -->
 <section class="sec oferta" id="preco" aria-labelledby="t11">
   <div class="dentro">
@@ -447,6 +512,16 @@ function contar() {
   rel.hidden = false;
 }
 contar(); setInterval(contar, 30000);
+
+// Super bônus: contagem por segundo até o mesmo fim real (30/11, 23h59). Depois disso o bloco some.
+const sb = document.querySelector("[data-superbonus]");
+function contarBonus() {
+  const s = Math.floor((FIM - Date.now()) / 1000);
+  if (s <= 0) { sb.hidden = true; return; }
+  const v = { d: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60 };
+  for (const k in v) sb.querySelector(`[data-sb="${k}"]`).textContent = String(v[k]).padStart(2, "0");
+}
+contarBonus(); setInterval(contarBonus, 1000);
 
 // Entrada dos blocos ao rolar.
 const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
