@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mapa das dívidas grátis · Dindin com Ciência</title>
+<meta name="description" content="PDF grátis de 6 páginas para colocar todas as suas dívidas numa folha só e descobrir quais pesam mais no seu bolso.">
+<meta property="og:title" content="Mapa das dívidas: PDF grátis">
+<meta property="og:description" content="A folha para colocar todas as suas dívidas no papel e descobrir quais pesam mais no seu bolso.">
+<meta property="og:image" content="https://editorajm.com.br/mapa-das-dividas/img/compartilhar.jpg">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20120%20120%22%3E%3Crect%20width%3D%22120%22%20height%3D%22120%22%20rx%3D%2226%22%20fill%3D%22%23ffc83d%22/%3E%3Cg%20transform%3D%22rotate%28-10%2038%2070%29%22%3E%3Ctext%20x%3D%2238%22%20y%3D%2292%22%20font-family%3D%22Arial%20Rounded%20MT%20Bold%2CArial%2Csans-serif%22%20font-size%3D%2276%22%20font-weight%3D%22700%22%20fill%3D%22%230f2d5c%22%20text-anchor%3D%22middle%22%3EJ%3C/text%3E%3C/g%3E%3Cg%20transform%3D%22rotate%288%2082%2066%29%22%3E%3Ctext%20x%3D%2282%22%20y%3D%2290%22%20font-family%3D%22Arial%20Rounded%20MT%20Bold%2CArial%2Csans-serif%22%20font-size%3D%2266%22%20font-weight%3D%22700%22%20fill%3D%22%23e2574c%22%20text-anchor%3D%22middle%22%3EM%3C/text%3E%3C/g%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Manrope:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--marinho:#0d3b2b;--marinho-2:#14503a;--azul:#1c7a52;--ceu:#d8efe1;--ceu-2:#e9f6ee;--amarelo:#f5c518;--amarelo-2:#ffd84d;--marfim:#f4f8f2;--borda:clamp(16px,4vw,64px)}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--marinho);color:var(--marfim);font-family:Manrope,system-ui,sans-serif;font-size:18px;line-height:1.55}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+h1,h2,h3{font-family:Fredoka,system-ui,sans-serif;font-weight:700;letter-spacing:-.02em;line-height:1.05;text-wrap:balance}
+h1{font-size:clamp(38px,5vw,62px);max-width:17ch}
+h2{font-size:clamp(28px,3.6vw,44px);max-width:22ch}
+h3{font-size:22px;line-height:1.2}
+p{max-width:60ch}
+.sec{padding:clamp(56px,8vw,110px) var(--borda)}
+.dentro{max-width:1100px;margin:0 auto}
+.logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:inherit;font-family:Fredoka,system-ui,sans-serif;font-weight:700;font-size:22px}.logo-marca{width:63px;height:40px;flex:none}.barra{padding:18px var(--borda);font-family:Fredoka,sans-serif;font-weight:700;font-size:22px}
+.claro{background:var(--ceu);color:var(--marinho)}
+.selo{display:inline-block;background:var(--amarelo);color:var(--marinho);font-weight:800;font-size:15px;letter-spacing:.12em;text-transform:uppercase;padding:7px 14px;border-radius:999px}
+.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--amarelo);color:var(--marinho);font-family:Manrope,system-ui,sans-serif;font-weight:800;font-size:19px;text-decoration:none;border:0;border-radius:999px;padding:18px 32px;min-height:58px;cursor:pointer;transition:transform .15s,background .15s}
+.btn:hover{background:var(--amarelo-2);transform:translateY(-2px)}
+a:focus-visible,.btn:focus-visible,input:focus-visible{outline:3px solid var(--amarelo);outline-offset:3px}
+.claro a:focus-visible,.claro .btn:focus-visible{outline-color:var(--azul)}
+@media (prefers-reduced-motion:reduce){.btn{transition:none}}
+.topo{padding-top:clamp(24px,4vw,48px)}
+.topo .dentro{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,72px);align-items:center}
+.topo h1{margin-top:18px}
+.topo .sub{font-size:20px;margin-top:18px}
+.form{margin-top:28px;background:var(--ceu);color:var(--marinho);border-radius:22px;padding:clamp(20px,3vw,30px);display:grid;gap:14px;max-width:520px}
+.form label.campo{font-weight:800;font-size:16px}
+.form input[type=email]{width:100%;font:inherit;font-size:19px;padding:16px 18px;border:2px solid #9cc7ae;border-radius:14px;background:#fff;color:var(--marinho);min-height:58px}
+.form input[type=email]:focus{border-color:var(--azul);outline:none}
+.form .aceite{display:grid;grid-template-columns:24px 1fr;gap:12px;align-items:start;font-size:15px;line-height:1.45;cursor:pointer}
+.form .aceite input{width:22px;height:22px;margin-top:1px;accent-color:var(--azul)}
+.form .btn{width:100%}
+.form .miudo{font-size:14px;line-height:1.45}
+.form .erro{color:#b3261e;font-weight:700;font-size:15px}
+.isca{display:none}
+.folhas{position:relative;height:clamp(380px,44vw,560px)}
+.folhas img{position:absolute;width:60%;box-shadow:0 20px 44px rgba(0,0,0,.4);border-radius:4px}
+.folhas img:nth-child(1){left:0;top:10%;transform:rotate(-7deg)}
+.folhas img:nth-child(2){right:0;top:6%;transform:rotate(6deg)}
+.folhas img:nth-child(3){left:20%;top:0;z-index:2}
+.dentro-pdf h2{margin:0 auto;text-align:center}
+.cards{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.cards li{background:var(--ceu-2);padding:26px 22px}
+.cards h3{margin-bottom:8px}
+.cards p{font-size:17px}
+.fim{text-align:center}
+.fim h2,.fim p{margin-left:auto;margin-right:auto}
+.fim p{margin-top:14px;font-size:19px}
+.fim .btn{margin-top:26px}
+@media (max-width:860px){
+  .topo .dentro{grid-template-columns:1fr}
+  .folhas{order:-1;height:clamp(300px,86vw,440px);max-width:440px;width:100%;margin:0 auto}
+  .cards{grid-template-columns:1fr}
+  .form{max-width:none}
+}
+/* rodapé padrão (gerado por rodape.py) */
+footer{padding:56px var(--borda) 40px;background:#082a1e;color:var(--marfim);text-align:center}
+footer a{color:inherit}
+footer .logo{display:flex;justify-content:center;align-items:center;gap:clamp(10px,2vw,24px);text-decoration:none;font-family:Fredoka,system-ui,sans-serif;font-weight:700;font-size:clamp(40px,8vw,104px);letter-spacing:-.03em;line-height:1;color:var(--ceu)}
+footer .logo .logo-marca{width:clamp(76px,13vw,180px);height:clamp(48px,8.2vw,114px);flex:none}
+footer .info,footer .legal{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 32px;margin-top:22px;font-size:15px}
+footer .legal{margin-top:16px;font-size:14px;opacity:.85}
+@media (max-width:760px){footer .info,footer .legal{flex-direction:column;align-items:center}}
+/* fim do rodapé padrão */
+</style>
+<link rel="stylesheet" href="/comum/topo.css">
+</head>
+<body>
+<header class="barra">
+  <a class="logo" href="/" aria-label="Editora JM, página inicial"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg><span class="logo-nome">Editora</span></a>
+  <nav class="menu" aria-label="Menu principal">
+    <div class="menu-item">
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-livros">Nossos livros <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 5 7 9.5 11.5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="menu-lista" id="menu-livros">
+        <a href="/#espiritualidade"><span class="menu-icone icone-fe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M6 8.5h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Espiritualidade e Religião</b><small>Histórias da Bíblia e orações pela família</small></span></a>
+        <a href="/#financas"><span class="menu-icone icone-financas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14.6 9.2c-.5-.9-1.5-1.4-2.6-1.4-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.6.4 2.7.9 2.7 2.2s-1.2 2.1-2.7 2.1c-1.2 0-2.2-.5-2.7-1.5M12 6.3v1.5m0 8.4v1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><b>Finanças</b><small>Sair das dívidas e organizar o dinheiro</small></span></a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+<section class="sec topo" aria-labelledby="t1">
+  <div class="dentro">
+    <div>
+      <span class="selo">Grátis</span>
+      <h1 id="t1">Coloque todas as suas dívidas numa folha só</h1>
+      <p class="sub">O <b>Mapa das dívidas</b> é um PDF grátis de 6 páginas: onde procurar cada dívida, como preencher coluna por coluna e como descobrir qual delas pesa mais no seu bolso.</p>
+
+      <!-- Formulário da Brevo: troque BREVO_FORM_URL pelo endereço do formulário (sibforms.com/serve/...). -->
+      <form class="form" id="form" method="POST" action="BREVO_FORM_URL" data-form>
+        <label class="campo" for="email">Seu melhor e-mail</label>
+        <input type="email" id="email" name="EMAIL" autocomplete="email" inputmode="email" placeholder="voce@email.com" required>
+        <label class="aceite"><input type="checkbox" name="OPT_IN" value="1" required><span>Quero receber o Mapa das dívidas e e-mails do Dindin com Ciência com dicas e ofertas dos livros da Editora JM. Posso sair quando quiser. Veja a <a href="/privacidade/">Política de privacidade</a>.</span></label>
+        <input class="isca" type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <input type="hidden" name="locale" value="pt">
+        <button class="btn" type="submit">Quero o mapa grátis</button>
+        <p class="erro" data-erro hidden></p>
+        <p class="miudo">O PDF chega no seu e-mail em poucos minutos. Para ler no celular ou imprimir.</p>
+      </form>
+    </div>
+    <div class="folhas">
+      <img src="img/pagina-04.jpg" width="520" height="737" alt="A folha do Mapa das dívidas, com as colunas Com quem, Tipo, Quanto devo hoje, Parcela, Juros ao mês e Atrasada">
+      <img src="img/pagina-05.jpg" width="520" height="737" alt="Página Agora, leia o seu mapa, com três perguntas">
+      <img src="img/pagina-01.jpg" width="520" height="737" alt="Capa do PDF grátis Mapa das dívidas, de João Moura">
+    </div>
+  </div>
+</section>
+
+<section class="sec claro" aria-labelledby="t2">
+  <div class="dentro">
+    <h2 id="t2">O que tem no mapa</h2>
+    <ul class="cards">
+      <li><h3>Onde procurar</h3><p>Cartão, cheque especial, carnês, contas atrasadas e o Registrato, do Banco Central, que mostra os empréstimos no seu CPF de graça.</p></li>
+      <li><h3>Coluna por coluna</h3><p>O que escrever em cada campo, onde achar o saldo devedor e os juros ao mês, e o que fazer quando não achar um número.</p></li>
+      <li><h3>Ler o mapa</h3><p>Três perguntas que mostram qual dívida cresce mais rápido, quais estão atrasadas e se as parcelas cabem no seu salário.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section class="sec fim" aria-labelledby="t3">
+  <div class="dentro">
+    <h2 id="t3">Um número no papel assusta menos do que um número na cabeça</h2>
+    <p>É com o total na mão que dá para montar um plano. Leva de 30 minutos a uma hora.</p>
+    <a class="btn" href="#form">Quero o mapa grátis</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <a class="logo" href="/"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f4f8f2" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg>Editora</a>
+  <div class="info">
+    <span>Material grátis de João Moura, autor do canal Dindin com Ciência</span>
+    <a href="mailto:atendimento.editorajm@gmail.com">atendimento.editorajm@gmail.com</a>
+    <span>Conteúdo educativo, não é recomendação de investimento</span>
+  </div>
+  <nav class="legal" aria-label="Informações legais"><a href="/termos/">Termos de uso</a><a href="/privacidade/">Política de privacidade</a><a href="/reembolso/">Garantia e reembolso</a></nav>
+</footer>
+<script>
+// Enquanto o formulário da Brevo não estiver ligado, avisa em vez de mandar para um endereço vazio.
+const form = document.querySelector("[data-form]");
+form.addEventListener("submit", e => {
+  if (form.getAttribute("action").startsWith("BREVO")) {
+    e.preventDefault();
+    const erro = form.querySelector("[data-erro]");
+    erro.textContent = "O cadastro ainda não está ligado. Tente de novo mais tarde.";
+    erro.hidden = false;
+  }
+});
+</script>
+<script src="/comum/topo.js" defer></script>
+</body>
+</html>

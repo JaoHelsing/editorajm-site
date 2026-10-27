@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /mapa-das-dividas/arquivo/
+Disallow: /mapa-das-dividas/confira/
