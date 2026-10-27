@@ -1,0 +1,27 @@
+/* Topo padrão de todas as páginas (gerado por topo.py): logo + menu "Nossos livros", na coluna de 1200px. */
+.barra{position:relative;z-index:20;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px max(var(--borda,16px),calc((100% - 1200px)/2));font-family:Manrope,system-ui,sans-serif;font-weight:700;font-size:16px}
+.barra .logo{display:inline-flex;align-items:center;gap:10px;text-decoration:none;color:#f7f1e3;font-family:Fredoka,system-ui,sans-serif;font-weight:700;font-size:22px}
+.barra .logo-marca{width:63px;height:40px;flex:none}
+.barra .menu{display:flex;align-items:center;gap:10px}
+.barra .menu-item{position:relative}
+.barra .menu-botao,.barra .menu-cta{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:999px;font:inherit;font-weight:800;text-decoration:none;cursor:pointer;white-space:nowrap;transition:background .15s,color .15s}
+.barra .menu-botao{background:rgba(247,241,227,.08);color:#f7f1e3;border:1.5px solid rgba(247,241,227,.28)}
+.barra .menu-botao:hover,.barra .menu-botao[aria-expanded="true"]{background:#f7f1e3;color:#0f2d5c;border-color:#f7f1e3}
+.barra .menu-botao svg{width:14px;height:14px;transition:transform .2s}
+.barra .menu-botao[aria-expanded="true"] svg{transform:rotate(180deg)}
+.barra .menu-cta{background:#ffc83d;color:#0f2d5c;border:0}
+.barra .menu-cta:hover{background:#ffd86e}
+.barra .menu-botao:focus-visible,.barra .menu-cta:focus-visible,.barra .menu-lista a:focus-visible{outline:3px solid #ffc83d;outline-offset:3px}
+.barra .menu-lista{position:absolute;right:0;top:calc(100% + 10px);width:min(340px,calc(100vw - 32px));background:#fff;color:#0f2d5c;border-radius:20px;padding:8px;box-shadow:0 18px 50px rgba(5,20,45,.35);display:grid;gap:4px;opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .18s,transform .18s,visibility .18s}
+.barra .menu-lista.aberto{opacity:1;visibility:visible;transform:none}
+.barra .menu-lista a{display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:center;padding:12px;border-radius:14px;text-decoration:none;color:#0f2d5c;font-weight:700}
+.barra .menu-lista a:hover{background:#e3eefa}
+.barra .menu-lista b{display:block;font-family:Manrope,system-ui,sans-serif;font-size:16px;line-height:1.25}
+.barra .menu-lista small{display:block;font-size:14px;font-weight:600;color:#3d5577;line-height:1.35;margin-top:2px}
+.barra .menu-icone{width:44px;height:44px;border-radius:12px;display:grid;place-items:center}
+.barra .menu-icone svg{width:22px;height:22px}
+.barra .icone-fe{background:#fff1c9;color:#b07a00}
+.barra .icone-financas{background:#d6f1e3;color:#1f7a50}
+@media (max-width:600px){.barra .menu-item{position:static}.barra .menu-lista{left:16px;right:16px;width:auto;top:calc(100% - 4px)}}
+@media (max-width:480px){.barra:has(.menu-cta) .logo-nome{display:none}.barra .logo{font-size:18px}.barra .logo-marca{width:50px;height:32px}.barra .menu-botao,.barra .menu-cta{padding:10px 14px;font-size:15px}}
+@media (prefers-reduced-motion:reduce){.barra .menu-lista,.barra .menu-botao svg{transition:none}}

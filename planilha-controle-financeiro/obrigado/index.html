@@ -58,9 +58,21 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
 @media (max-width:760px){footer .info,footer .legal{flex-direction:column;align-items:center}}
 /* fim do rodapé padrão */
 </style>
+<link rel="stylesheet" href="/comum/topo.css">
 </head>
 <body>
-<header class="barra"><span class="logo"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f4f8f2" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg>Editora</span></header>
+<header class="barra">
+  <a class="logo" href="/" aria-label="Editora JM, página inicial"><svg class="logo-marca" viewBox="0 30 120 76" aria-hidden="true"><g transform="rotate(-10 38 70)"><text x="38" y="92" font-family="Fredoka" font-size="76" font-weight="700" fill="#f7f1e3" text-anchor="middle">J</text></g><g transform="rotate(8 82 66)"><text x="82" y="90" font-family="Fredoka" font-size="66" font-weight="700" fill="#e2574c" text-anchor="middle">M</text></g></svg><span class="logo-nome">Editora</span></a>
+  <nav class="menu" aria-label="Menu principal">
+    <div class="menu-item">
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-livros">Nossos livros <svg viewBox="0 0 14 14" aria-hidden="true"><path d="M2.5 5 7 9.5 11.5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+      <div class="menu-lista" id="menu-livros">
+        <a href="/#espiritualidade"><span class="menu-icone icone-fe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v18M6 8.5h12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></span><span><b>Espiritualidade e Religião</b><small>Histórias da Bíblia e orações pela família</small></span></a>
+        <a href="/#financas"><span class="menu-icone icone-financas"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14.6 9.2c-.5-.9-1.5-1.4-2.6-1.4-1.5 0-2.6.8-2.6 2s1 1.7 2.6 2.1c1.6.4 2.7.9 2.7 2.2s-1.2 2.1-2.7 2.1c-1.2 0-2.2-.5-2.7-1.5M12 6.3v1.5m0 8.4v1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span><span><b>Finanças</b><small>Sair das dívidas e organizar o dinheiro</small></span></a>
+      </div>
+    </div>
+  </nav>
+</header>
 <main>
 <section class="sec topo" aria-labelledby="t1">
   <div class="dentro">
@@ -115,5 +127,6 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
   </div>
   <nav class="legal" aria-label="Informações legais"><a href="/termos/">Termos de uso</a><a href="/privacidade/">Política de privacidade</a><a href="/reembolso/">Garantia e reembolso</a></nav>
 </footer>
+<script src="/comum/topo.js" defer></script>
 </body>
 </html>
