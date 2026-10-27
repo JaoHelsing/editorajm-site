@@ -17,3 +17,9 @@
     if (e.key === 'Escape' && botao.getAttribute('aria-expanded') === 'true') { mostrar(false); botao.focus(); }
   });
 })();
+
+// Justifica parágrafos e listas que estão alinhados à esquerda. O que é centralizado continua centralizado.
+document.querySelectorAll('main p, main li').forEach(function (el) {
+  var alinhamento = getComputedStyle(el).textAlign;
+  if (alinhamento === 'start' || alinhamento === 'left') el.classList.add('justificado');
+});

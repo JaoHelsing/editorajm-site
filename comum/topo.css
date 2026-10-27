@@ -25,3 +25,5 @@
 @media (max-width:600px){.barra .menu-item{position:static}.barra .menu-lista{left:16px;right:16px;width:auto;top:calc(100% - 4px)}}
 @media (max-width:480px){.barra:has(.menu-cta) .logo-nome{display:none}.barra .logo{font-size:18px}.barra .logo-marca{width:50px;height:32px}.barra .menu-botao,.barra .menu-cta{padding:10px 14px;font-size:15px}}
 @media (prefers-reduced-motion:reduce){.barra .menu-lista,.barra .menu-botao svg{transition:none}}
+/* Texto corrido justificado em todas as páginas (o topo.js marca só o que estava alinhado à esquerda). */
+.justificado{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
