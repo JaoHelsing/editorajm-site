@@ -150,9 +150,9 @@ p{max-width:62ch}
 .sb-texto{font-size:18px}
 .sb-texto+ul{list-style:none;display:grid;gap:6px;margin:14px 0 0;font-weight:700}
 .sb-texto+ul li::before{content:"✓";margin-right:10px}
-.sb-relogio{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:26px 0 8px;max-width:460px}
+.sb-relogio{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:26px 0 8px;max-width:340px}
 .sb-relogio div{background:var(--marinho);color:var(--amarelo);border-radius:14px;padding:12px 6px;text-align:center}
-.sb-relogio b{display:block;font-size:clamp(30px,4vw,44px);line-height:1;font-variant-numeric:tabular-nums}
+.sb-relogio b{display:block;font-size:clamp(48px,6vw,68px);line-height:1;font-variant-numeric:tabular-nums}
 .sb-relogio small{font-size:13px;font-weight:700;color:var(--marfim);text-transform:uppercase;letter-spacing:.06em}
 .sb-aviso{font-size:15px;font-weight:700}
 .superbonus .btn{background:var(--marinho);color:var(--amarelo);margin-top:20px;width:100%;max-width:460px}
@@ -265,7 +265,7 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
         <li><span class="nome"><b>4</b>Negociar</span><span>as perguntas</span></li>
         <li><span class="nome"><b>5</b>Não voltar</span><span>o colchão</span></li>
       </ul>
-      <p class="relogio" data-relogio hidden>O preço de lançamento e o <a href="#bonus">SUPER BÔNUS</a> acabam em <b data-falta></b>.</p>
+      <p class="relogio" data-relogio hidden>O preço de lançamento acaba em <b data-falta></b>.</p>
     </div>
   </div>
 </section>
@@ -350,7 +350,7 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
       <figure class="sobe"><img src="img/pagina-16.jpg" width="520" height="737" alt="Página Duas formas de escolher, com os métodos bola de neve e avalanche" loading="lazy"><figcaption>Bola de neve ou avalanche</figcaption></figure>
       <figure class="sobe"><img src="img/pagina-20.jpg" width="520" height="737" alt="Página O que perguntar na negociação" loading="lazy"><figcaption>O que perguntar ao credor</figcaption></figure>
       <figure class="sobe"><img src="img/pagina-26.jpg" width="520" height="737" alt="Folha de trabalho Mapa das dívidas, para imprimir" loading="lazy"><figcaption>Folha: Mapa das dívidas</figcaption></figure>
-      <figure class="sobe bonus"><img src="img/bonus/pagina-03.jpg" width="520" height="737" alt="Página do bônus com modelos de mensagem para pedir uma proposta de acordo e desconto à vista" loading="lazy"><figcaption>Bônus: modelos de mensagem</figcaption></figure>
+      <figure class="sobe bonus" data-sb-item><img src="img/bonus/pagina-03.jpg" width="520" height="737" alt="Página do bônus com modelos de mensagem para pedir uma proposta de acordo e desconto à vista" loading="lazy"><figcaption>Bônus: modelos de mensagem</figcaption></figure>
     </div>
   </div>
 </section>
@@ -392,30 +392,28 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
   </div>
 </section>
 
-<!-- Super bônus (some sozinho depois de 30/11) -->
+<!-- Super bônus: 30 minutos por visitante (e nunca depois de 30/11) -->
 <section class="sec superbonus" id="bonus" aria-labelledby="tsb" data-superbonus>
   <div class="dentro">
     <div class="texto">
       <span class="sb-selo">Presente por tempo limitado</span>
       <h2 class="sb-titulo" id="tsb">SUPER BÔNUS</h2>
-      <p class="sb-chamada">Comprando <mark>até 30 de novembro</mark>, você leva também, sem pagar nada a mais:</p>
+      <p class="sb-chamada">Comprando <mark>nos próximos 30 minutos</mark>, você leva também, sem pagar nada a mais:</p>
       <h3 class="sb-nome">Modelos de mensagem para negociar com o banco</h3>
       <p class="sb-texto">Um PDF de 8 páginas com as mensagens prontas para copiar, colar e mandar ao banco, sem precisar pensar no que escrever nem passar vergonha no telefone.</p>
       <ul><li>8 modelos de mensagem prontos</li><li>Roteiro para a ligação</li><li>Checklist antes de pagar o acordo</li><li>Tabela para anotar os protocolos</li></ul>
-      <div class="sb-relogio" role="timer" aria-label="Tempo até o fim do bônus">
-        <div><b data-sb="d">--</b><small>dias</small></div>
-        <div><b data-sb="h">--</b><small>horas</small></div>
-        <div><b data-sb="m">--</b><small>min</small></div>
-        <div><b data-sb="s">--</b><small>seg</small></div>
+      <div class="sb-relogio" role="timer" aria-label="Tempo que falta para o bônus sair da oferta">
+        <div><b data-sb="m">30</b><small>minutos</small></div>
+        <div><b data-sb="s">00</b><small>segundos</small></div>
       </div>
-      <p class="sb-aviso">Quando o relógio zerar, o bônus sai da oferta e o livro passa para R$ 19,90.</p>
+      <p class="sb-aviso">Quando o relógio zerar, o SUPER BÔNUS sai da oferta.</p>
       <a class="btn" href="#preco" data-checkout>Quero o livro com o SUPER BÔNUS</a>
     </div>
     <div class="sb-paginas" aria-hidden="false">
       <img src="img/bonus/pagina-03.jpg" width="520" height="737" alt="Página do bônus Modelos de mensagem para negociar com o banco" loading="lazy">
       <img src="img/bonus/pagina-07.jpg" width="520" height="736" alt="Página do bônus Modelos de mensagem para negociar com o banco" loading="lazy">
       <img src="img/bonus/pagina-01.jpg" width="520" height="737" alt="Página do bônus Modelos de mensagem para negociar com o banco" loading="lazy">
-      <span class="sb-carimbo"><span><b>GRÁTIS</b>até 30/11</span></span>
+      <span class="sb-carimbo"><span><b>GRÁTIS</b>só agora</span></span>
     </div>
   </div>
 </section>
@@ -431,13 +429,13 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
         <li>Mapa das dívidas, Plano de pagamento e Termômetro<span>para imprimir</span></li>
         <li>Modelo para fazer tudo à mão<span>sem impressora</span></li>
         <li>Juros do Banco Central e as leis que protegem você<span>com a fonte</span></li>
-        <li class="bonus">Bônus até 30/11: modelos de mensagem para negociar com o banco<span>PDF de 8 páginas</span></li>
+        <li class="bonus" data-sb-item>SUPER BÔNUS: modelos de mensagem para negociar com o banco<span>PDF de 8 páginas</span></li>
       </ul>
     </div>
     <div class="caixa sobe">
       <p class="miudo">Preço de lançamento, até 30 de novembro</p>
       <p class="preco"><small>R$</small>14,90</p>
-      <p class="depois-preco">A partir de 1º de dezembro, o livro passa a custar R$ 19,90 e o bônus sai da oferta.</p>
+      <p class="depois-preco">A partir de 1º de dezembro, o livro passa a custar R$ 19,90.</p>
       <a class="btn" href="#preco" data-checkout>Quero o meu plano</a>
       <p class="miudo">Pagamento seguro pela Hotmart, no Pix, no boleto ou no cartão. O livro chega no seu e-mail logo depois do pagamento.</p>
       <!-- 12. Garantia -->
@@ -471,7 +469,7 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
   <div class="dentro">
     <img class="sobe" src="img/livro-3d.jpg" width="900" height="900" alt="O livro Como sair das dívidas ganhando pouco em 3D" loading="lazy">
     <h2 id="t14" class="sobe">O primeiro degrau cabe numa folha de papel</h2>
-    <p class="sobe">O plano em 5 degraus, com as folhas de trabalho e o bônus, por R$ 14,90 até 30/11.</p>
+    <p class="sobe">O plano em 5 degraus, com as folhas de trabalho, por R$ 14,90 até 30/11.</p>
     <a class="btn sobe" href="#preco" data-checkout>Quero o meu plano</a>
     <p class="miudo sobe">Garantia de 7 dias · Chega no seu e-mail</p>
   </div>
@@ -506,15 +504,26 @@ function contar() {
 }
 contar(); setInterval(contar, 30000);
 
-// Super bônus: contagem por segundo até o mesmo fim real (30/11, 23h59). Depois disso o bloco some.
+// Super bônus: 30 minutos contados a partir da primeira visita deste navegador.
+// Quando zera, a página tira o bônus da oferta (bloco, item da lista e página de amostra).
+// Depois de 30/11 o bônus acaba para todos.
 const sb = document.querySelector("[data-superbonus]");
+const SB_CHAVE = "sb-inicio-" + location.pathname, SB_DURACAO = 30 * 60 * 1000;
+let sbInicio = Date.now();
+try {
+  const salvo = Number(localStorage.getItem(SB_CHAVE));
+  if (salvo) sbInicio = salvo; else localStorage.setItem(SB_CHAVE, String(sbInicio));
+} catch (e) {}
 function contarBonus() {
-  const s = Math.floor((FIM - Date.now()) / 1000);
-  if (s <= 0) { sb.hidden = true; return; }
-  const v = { d: Math.floor(s / 86400), h: Math.floor(s % 86400 / 3600), m: Math.floor(s % 3600 / 60), s: s % 60 };
-  for (const k in v) sb.querySelector(`[data-sb="${k}"]`).textContent = String(v[k]).padStart(2, "0");
+  const s = Math.floor((Math.min(sbInicio + SB_DURACAO, FIM) - Date.now()) / 1000);
+  if (s <= 0) {
+    document.querySelectorAll("[data-superbonus],[data-sb-item]").forEach(el => el.hidden = true);
+    clearInterval(sbTimer); return;
+  }
+  sb.querySelector('[data-sb="m"]').textContent = String(Math.floor(s / 60)).padStart(2, "0");
+  sb.querySelector('[data-sb="s"]').textContent = String(s % 60).padStart(2, "0");
 }
-contarBonus(); setInterval(contarBonus, 1000);
+const sbTimer = setInterval(contarBonus, 1000); contarBonus();
 
 // Entrada dos blocos ao rolar.
 const io = "IntersectionObserver" in window ? new IntersectionObserver(es => es.forEach(e => {
