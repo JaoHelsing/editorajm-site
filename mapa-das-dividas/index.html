@@ -102,13 +102,14 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
       <h1 id="t1">Coloque todas as suas dívidas numa folha só</h1>
       <p class="sub">O <b>Mapa das dívidas</b> é um PDF grátis de 6 páginas: onde procurar cada dívida, como preencher coluna por coluna e como descobrir qual delas pesa mais no seu bolso.</p>
 
-      <!-- Formulário da Brevo: troque BREVO_FORM_URL pelo endereço do formulário (sibforms.com/serve/...). -->
-      <form class="form" id="form" method="POST" action="BREVO_FORM_URL" data-form>
+      <!-- Formulário "Mapa das dívidas" da Brevo (lista Mapa das dívidas; depois do envio, a Brevo leva para /confira/). -->
+      <form class="form" id="form" method="POST" action="https://31a69f8d.sibforms.com/serve/MUIFAB-WWY4zCqhNZVZC9P1xxuaFKIzVhOztr3_me0GEbm53PaJACphyfdwmYgR8AbPeklmTD-6Qhbk_6yRl9KRufNqYrrRlgeJfycPh3Q2KL8gZsXhVZMK-NxFQ8a64ZeHlK-uHVuAnmjSCjJfmX3qw0V71dwd27aVPgd7kVNYKODpoj3E-7D3w9bRrZXXakQGUR7QliFLPEKmybQ==" data-form>
         <label class="campo" for="email">Seu melhor e-mail</label>
         <input type="email" id="email" name="EMAIL" autocomplete="email" inputmode="email" placeholder="voce@email.com" required>
-        <label class="aceite"><input type="checkbox" name="OPT_IN" value="1" required><span>Quero receber o Mapa das dívidas e e-mails do Dindin com Ciência com dicas e ofertas dos livros da Editora JM. Posso sair quando quiser. Veja a <a href="/privacidade/">Política de privacidade</a>.</span></label>
+        <label class="aceite"><input type="checkbox" required><span>Quero receber o Mapa das dívidas e e-mails do Dindin com Ciência com dicas e ofertas dos livros da Editora JM. Posso sair quando quiser. Veja a <a href="/privacidade/">Política de privacidade</a>.</span></label>
         <input class="isca" type="text" name="email_address_check" value="" tabindex="-1" autocomplete="off" aria-hidden="true">
         <input type="hidden" name="locale" value="pt">
+        <input type="hidden" name="html_type" value="simple">
         <button class="btn" type="submit">Quero o mapa grátis</button>
         <p class="erro" data-erro hidden></p>
         <p class="miudo">O PDF chega no seu e-mail em poucos minutos. Para ler no celular ou imprimir.</p>
@@ -151,18 +152,6 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
   </div>
   <nav class="legal" aria-label="Informações legais"><a href="/termos/">Termos de uso</a><a href="/privacidade/">Política de privacidade</a><a href="/reembolso/">Garantia e reembolso</a></nav>
 </footer>
-<script>
-// Enquanto o formulário da Brevo não estiver ligado, avisa em vez de mandar para um endereço vazio.
-const form = document.querySelector("[data-form]");
-form.addEventListener("submit", e => {
-  if (form.getAttribute("action").startsWith("BREVO")) {
-    e.preventDefault();
-    const erro = form.querySelector("[data-erro]");
-    erro.textContent = "O cadastro ainda não está ligado. Tente de novo mais tarde.";
-    erro.hidden = false;
-  }
-});
-</script>
 <script src="/comum/topo.js" defer></script>
 </body>
 </html>
