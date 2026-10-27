@@ -83,6 +83,28 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.livro,.livro .foto img,.ver,.btn{transition:none}.livro:hover,.livro:hover .foto img,.btn:hover{transform:none}}
 @media (max-width:760px){.autor .dentro{grid-template-columns:1fr}.tema{border-radius:22px}.tema-cab{align-items:flex-start}}
 @media (max-width:480px){.vitrine{padding-left:10px;padding-right:10px}.tema{padding:16px 14px}.livro .info{padding:18px 16px 20px}.livro .preco{font-size:26px}.ver{font-size:16px;padding:12px 18px}}
+
+/* carrossel do celular: um livro por vez, arrastando para o lado, com setas e bolinhas (montado pelo script no fim da página) */
+.carrossel{position:relative}
+.carrossel-seta,.carrossel-pontos{display:none}
+@media (max-width:760px){
+  .carrossel .grade{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .carrossel .grade::-webkit-scrollbar{display:none}
+  .carrossel .grade>.livro{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always}
+  .carrossel .livro:hover{transform:none}
+  .carrossel.varios .carrossel-seta{display:grid;place-items:center;position:absolute;top:var(--meio-foto,40%);transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:var(--marinho);box-shadow:0 4px 14px rgba(15,45,92,.25);cursor:pointer;z-index:2;transition:opacity .2s}
+  .carrossel-seta svg{width:20px;height:20px}
+  .carrossel-seta.antes{left:8px}
+  .carrossel-seta.depois{right:8px}
+  .carrossel-seta:disabled{opacity:0;pointer-events:none}
+  .carrossel-seta:focus-visible,.carrossel-pontos button:focus-visible{outline:3px solid var(--amarelo);outline-offset:2px}
+  .carrossel.varios .carrossel-pontos{display:flex;justify-content:center;gap:4px;margin-top:14px}
+  .carrossel-pontos button{width:24px;height:24px;border:0;background:none;padding:0;display:grid;place-items:center;cursor:pointer}
+  .carrossel-pontos button::before{content:"";width:8px;height:8px;border-radius:999px;background:#b9cde6;transition:width .2s,background .2s}
+  .carrossel-pontos button[aria-current="true"]::before{width:22px;background:var(--marinho)}
+  .tema-financas .carrossel-pontos button[aria-current="true"]::before{background:var(--verde)}
+}
+@media (max-width:760px) and (prefers-reduced-motion:reduce){.carrossel .grade{scroll-behavior:auto}.carrossel-seta,.carrossel-pontos button::before{transition:none}}
 /* rodapé padrão (gerado por rodape.py) */
 footer{padding:56px var(--borda) 40px;background:#0a2149;color:var(--marfim);text-align:center}
 footer a{color:inherit}
@@ -225,6 +247,67 @@ footer .legal{margin-top:16px;font-size:14px;opacity:.85}
   </div>
   <nav class="legal" aria-label="Informações legais"><a href="/termos/">Termos de uso</a><a href="/privacidade/">Política de privacidade</a><a href="/reembolso/">Garantia e reembolso</a></nav>
 </footer>
+<script>
+// Carrossel dos livros no celular: setas, bolinhas e arrastar com o dedo. No PC a grade continua lado a lado.
+document.querySelectorAll('.tema .grade').forEach(function (grade) {
+  var itens = Array.prototype.slice.call(grade.querySelectorAll(':scope > .livro'));
+  var caixa = document.createElement('div');
+  caixa.className = 'carrossel' + (itens.length > 1 ? ' varios' : '');
+  grade.parentNode.insertBefore(caixa, grade);
+  caixa.appendChild(grade);
+  if (itens.length < 2) return;
+
+  var seta = function (classe, rotulo, caminho) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'carrossel-seta ' + classe;
+    b.setAttribute('aria-label', rotulo);
+    b.innerHTML = '<svg viewBox="0 0 20 20" aria-hidden="true"><path d="' + caminho + '" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    caixa.appendChild(b);
+    return b;
+  };
+  var antes = seta('antes', 'Livro anterior', 'M12.5 4 6.5 10l6 6');
+  var depois = seta('depois', 'Próximo livro', 'M7.5 4l6 6-6 6');
+
+  var pontos = document.createElement('div');
+  pontos.className = 'carrossel-pontos';
+  var botoes = itens.map(function (item, i) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('aria-label', 'Ir para o livro ' + (i + 1) + ' de ' + itens.length);
+    b.addEventListener('click', function () { ir(i); });
+    pontos.appendChild(b);
+    return b;
+  });
+  caixa.appendChild(pontos);
+
+  function atual() {
+    var perto = 0;
+    itens.forEach(function (item, i) {
+      if (Math.abs(item.offsetLeft - grade.offsetLeft - grade.scrollLeft) < Math.abs(itens[perto].offsetLeft - grade.offsetLeft - grade.scrollLeft)) perto = i;
+    });
+    return perto;
+  }
+  function ir(i) { grade.scrollTo({ left: itens[Math.max(0, Math.min(i, itens.length - 1))].offsetLeft - grade.offsetLeft, behavior: 'smooth' }); }
+  function marcar() {
+    var i = atual();
+    botoes.forEach(function (b, n) { b.setAttribute('aria-current', n === i ? 'true' : 'false'); });
+    antes.disabled = i === 0;
+    depois.disabled = i === itens.length - 1;
+  }
+  // As setas ficam na altura do meio da foto do livro.
+  function alinhar() {
+    var foto = itens[0].querySelector('.foto');
+    if (foto) caixa.style.setProperty('--meio-foto', foto.offsetHeight / 2 + 'px');
+  }
+  antes.addEventListener('click', function () { ir(atual() - 1); });
+  depois.addEventListener('click', function () { ir(atual() + 1); });
+  grade.addEventListener('scroll', marcar, { passive: true });
+  window.addEventListener('resize', function () { alinhar(); marcar(); });
+  alinhar();
+  marcar();
+});
+</script>
 <script src="/comum/topo.js" defer></script>
 </body>
 </html>
