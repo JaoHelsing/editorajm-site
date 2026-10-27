@@ -1,3 +1,5 @@
 User-agent: *
 Disallow: /mapa-das-dividas/arquivo/
 Disallow: /mapa-das-dividas/confira/
+Disallow: /7-noites-de-oracao/arquivo/
+Disallow: /7-noites-de-oracao/confira/
