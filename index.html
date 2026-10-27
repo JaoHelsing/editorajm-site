@@ -92,7 +92,7 @@ html{scroll-behavior:smooth}
   .carrossel .grade::-webkit-scrollbar{display:none}
   .carrossel .grade>.livro{flex:0 0 100%;scroll-snap-align:center;scroll-snap-stop:always}
   .carrossel .livro:hover{transform:none}
-  .carrossel.varios .carrossel-seta{display:grid;place-items:center;position:absolute;top:var(--meio-foto,40%);transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:var(--marinho);box-shadow:0 4px 14px rgba(15,45,92,.25);cursor:pointer;z-index:2;transition:opacity .2s}
+  .carrossel.varios .carrossel-seta{display:grid;place-items:center;position:absolute;top:calc(50% - 19px);transform:translateY(-50%);width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:var(--marinho);box-shadow:0 4px 14px rgba(15,45,92,.25);cursor:pointer;z-index:2;transition:opacity .2s}
   .carrossel-seta svg{width:20px;height:20px}
   .carrossel-seta.antes{left:8px}
   .carrossel-seta.depois{right:8px}
@@ -295,16 +295,10 @@ document.querySelectorAll('.tema .grade').forEach(function (grade) {
     antes.disabled = i === 0;
     depois.disabled = i === itens.length - 1;
   }
-  // As setas ficam na altura do meio da foto do livro.
-  function alinhar() {
-    var foto = itens[0].querySelector('.foto');
-    if (foto) caixa.style.setProperty('--meio-foto', foto.offsetHeight / 2 + 'px');
-  }
   antes.addEventListener('click', function () { ir(atual() - 1); });
   depois.addEventListener('click', function () { ir(atual() + 1); });
   grade.addEventListener('scroll', marcar, { passive: true });
-  window.addEventListener('resize', function () { alinhar(); marcar(); });
-  alinhar();
+  window.addEventListener('resize', marcar);
   marcar();
 });
 </script>
