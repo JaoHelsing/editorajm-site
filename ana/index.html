@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ana Secretaria</title>
+<meta name="description" content="Ana Secretaria: secretária virtual que agenda consultas pelo WhatsApp para profissionais de saúde.">
+<style>
+  :root {
+    --verde: #128c4a;
+    --verde-claro: #e7f7ee;
+    --fundo: #f6fbf8;
+    --texto: #1d2b24;
+    --suave: #56685e;
+    --balao-eu: #d9fdd3;
+    --balao-ela: #ffffff;
+    --borda: #d5e6dc;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    line-height: 1.6;
+  }
+  p, li { text-align: justify; hyphens: auto; }
+  .caixa { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 20px 0; }
+  .marca { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.2rem; }
+  .marca span {
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--verde); color: #fff;
+    display: grid; place-items: center; font-size: 1.1rem;
+  }
+  .topo { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding: 32px 0 56px; }
+  h1 { font-size: 2.3rem; line-height: 1.15; margin: 0 0 16px; }
+  h1 em { color: var(--verde); font-style: normal; }
+  .sub { font-size: 1.1rem; color: var(--suave); margin: 0 0 24px; }
+  .botao {
+    display: inline-block; background: var(--verde); color: #fff;
+    padding: 14px 22px; border-radius: 999px; text-decoration: none; font-weight: 600;
+  }
+  .celular {
+    background: #efeae2; border-radius: 28px; padding: 14px;
+    border: 8px solid #1d2b24; max-width: 340px; margin: 0 auto;
+    box-shadow: 0 20px 40px rgba(18, 140, 74, .15);
+  }
+  .celular .barra { background: var(--verde); color: #fff; margin: -14px -14px 12px; padding: 12px 16px; border-radius: 18px 18px 0 0; font-weight: 600; }
+  .msg { max-width: 82%; padding: 8px 12px; border-radius: 10px; margin: 6px 0; font-size: .93rem; text-align: left; }
+  .ela { background: var(--balao-ela); }
+  .eu { background: var(--balao-eu); margin-left: auto; }
+  .opcoes { display: flex; flex-wrap: wrap; gap: 6px; margin: 4px 0 6px; }
+  .opcoes b { background: #fff; color: var(--verde); border: 1px solid var(--borda); border-radius: 8px; padding: 5px 10px; font-size: .85rem; font-weight: 600; }
+  section { padding: 48px 0; }
+  section.claro { background: #fff; border-top: 1px solid var(--borda); border-bottom: 1px solid var(--borda); }
+  h2 { font-size: 1.6rem; margin: 0 0 24px; text-align: center; }
+  .grade { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .cartao { background: var(--verde-claro); border-radius: 16px; padding: 22px; }
+  .cartao h3 { margin: 0 0 8px; font-size: 1.1rem; }
+  .cartao p { margin: 0; color: var(--suave); }
+  ul.tarefas { list-style: none; padding: 0; max-width: 640px; margin: 0 auto; }
+  ul.tarefas li { padding: 10px 0 10px 34px; position: relative; border-bottom: 1px solid var(--borda); }
+  ul.tarefas li::before { content: "✓"; position: absolute; left: 4px; color: var(--verde); font-weight: 700; }
+  .texto { max-width: 720px; margin: 0 auto; }
+  footer { padding: 32px 0; color: var(--suave); font-size: .9rem; text-align: center; }
+  footer a { color: var(--verde); }
+  @media (max-width: 760px) {
+    .topo { grid-template-columns: 1fr; gap: 32px; padding-top: 8px; }
+    h1 { font-size: 1.8rem; }
+    .grade { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<header class="caixa"><div class="marca"><span>A</span>Ana Secretaria</div></header>
+
+<main>
+  <div class="caixa topo">
+    <div>
+      <h1>A secretária que responde seus pacientes no <em>WhatsApp</em>, a qualquer hora.</h1>
+      <p class="sub">A Ana atende quem chama o consultório, tira dúvidas sobre os serviços e marca a consulta direto na sua agenda do Google. Quando o assunto pede você, ela passa a conversa para a profissional.</p>
+      <a class="botao" href="https://wa.me/5528999310056">Falar com a Ana no WhatsApp</a>
+    </div>
+    <div class="celular" aria-label="Exemplo de conversa com a Ana">
+      <div class="barra">Ana · Secretaria</div>
+      <div class="msg eu">Oi, queria marcar uma consulta</div>
+      <div class="msg ela">Oi! Aqui é a Ana, secretária da Dra. Para marcar, me diz seu nome completo?</div>
+      <div class="msg eu">Carla Souza</div>
+      <div class="msg ela">Obrigada, Carla! Esses são os próximos horários livres:</div>
+      <div class="opcoes"><b>Ter 14h</b><b>Qua 9h</b><b>Qui 16h</b></div>
+      <div class="msg eu">Qua 9h</div>
+      <div class="msg ela">Pronto, quarta às 9h está reservado no seu nome. Te mando um lembrete na véspera. 😊</div>
+    </div>
+  </div>
+
+  <section class="claro">
+    <div class="caixa">
+      <h2>Como funciona</h2>
+      <div class="grade">
+        <div class="cartao"><h3>1. O paciente chama</h3><p>No número de WhatsApp do consultório, de dia, de noite ou no fim de semana.</p></div>
+        <div class="cartao"><h3>2. A Ana conversa</h3><p>Responde com as informações que a profissional aprovou e oferece só os horários realmente livres.</p></div>
+        <div class="cartao"><h3>3. A consulta entra na agenda</h3><p>O horário escolhido vai direto para o Google Agenda, com o nome do paciente.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="caixa">
+      <h2>O que a Ana faz</h2>
+      <ul class="tarefas">
+        <li>Responde dúvidas sobre consultas, valores e localização, com o texto que a profissional definiu.</li>
+        <li>Mostra os horários livres da agenda e marca a consulta com um toque do paciente.</li>
+        <li>Desmarca e remarca quando o paciente pede.</li>
+        <li>Passa para a profissional tudo o que envolve pagamento, desconto ou dúvida clínica.</li>
+        <li>Nunca dá orientação de saúde: isso fica sempre com a profissional.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="claro" id="privacidade">
+    <div class="caixa texto">
+      <h2>Privacidade</h2>
+      <p>A Ana usa o nome, o telefone e as mensagens do paciente apenas para marcar, confirmar e lembrar consultas com a profissional que o atende, seguindo a Lei Geral de Proteção de Dados (Lei 13.709/2018). Os dados não são vendidos nem usados para propaganda. O paciente pode pedir a qualquer momento para ver ou apagar os seus dados, pelo próprio WhatsApp ou pelo e-mail abaixo.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="caixa">
+  Ana Secretaria · Atendimento: <a href="mailto:atendimento.editorajm@gmail.com">atendimento.editorajm@gmail.com</a> · WhatsApp <a href="https://wa.me/5528999310056">(28) 99931-0056</a>
+</footer>
+</body>
+</html>
